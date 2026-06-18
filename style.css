@@ -89,10 +89,19 @@
 }
 
 body {
+  --text: var(--theme-none-text);
+  --bg: var(--theme-none-bg);
+  --output: var(--theme-none-output);
+  --output-text: var(--theme-none-output-text);
+  --button: var(--theme-none-button);
+  --button-text: var(--theme-none-button-text);
+  --scrollbar: var(--theme-none-scrollbar);
+  --bg-image: var(--theme-none-bg-image);
+
   margin: 0;
   font-family: sans-serif;
-  background-color: var(--theme-none-bg);
-  color: var(--theme-none-text);
+  background-color: var(--bg);
+  color: var(--text);
   transition: color background-color 1s;
 }
 
@@ -108,7 +117,7 @@ body {
 }
 
 .bg-none {
-  background-image: var(--theme-none-bg-image);
+  background-image: var(--bg-image);
   opacity: 1;
 }
 
@@ -138,8 +147,8 @@ img {
   border-radius: 5px;
   padding: 0.5rem 2rem;
   margin-right: 1rem;
-  background: var(--theme-none-button);
-  color: var(--theme-none-button-text);
+  background: var(--button);
+  color: var(--button-text);
   cursor: pointer;
   transition: 0.5s;
   text-decoration: none;
@@ -179,9 +188,9 @@ a:has(h1) {
   overflow-y: auto;
   padding: 1rem;
   position: relative;
-  background-color: var(--theme-none-output);
-  color: var(--theme-none-output-text);
-  scrollbar-color: var(--theme-none-scrollbar) transparent;
+  background-color: var(--output);
+  color: var(--output-text);
+  scrollbar-color: var(--scrollbar) transparent;
 }
 
 .output :is(p, button, img, h2) {
@@ -208,8 +217,8 @@ a:has(h1) {
 }
 
 dialog {
-  background-image: var(--theme-none-bg-image);
-  color: var(--theme-none-output-text);
+  background-image: var(--bg-image);
+  color: var(--output-text);
   border: 1px solid;
   padding: 0;
   max-width: 40rem;
@@ -219,7 +228,7 @@ dialog {
   }
 
   > div {
-    background-color: var(--theme-none-output);
+    background-color: var(--output);
     padding: 1rem;
   }
 }
@@ -249,215 +258,123 @@ footer {
 }
 
 body.forest {
-  background-color: var(--theme-forest-bg);
-  color: var(--theme-forest-text);
-}
-body.forest .bg-forest {
-  background-image: var(--theme-forest-bg-image);
-  opacity: 1;
-}
-body.forest button {
-  background: var(--theme-forest-button);
-  color: var(--theme-forest-text);
-}
-body.forest .output {
-  background-color: var(--theme-forest-output);
-  color: var(--theme-forest-output-text);
-  scrollbar-color: var(--theme-forest-scrollbar) transparent;
-}
-body.forest dialog {
-  background-image: var(--theme-forest-bg-image);
-  color: var(--theme-forest-output-text);
-}
-body.forest dialog .inventory-content {
-  background-color: var(--theme-forest-output);
-}
+  --text: var(--theme-forest-text);
+  --bg: var(--theme-forest-bg);
+  --output: var(--theme-forest-output);
+  --output-text: var(--theme-forest-output-text);
+  --button: var(--theme-forest-button);
+  --button-text: var(--theme-forest-button-text);
+  --scrollbar: var(--theme-forest-scrollbar);
+  --bg-image: var(--theme-forest-bg-image);
 
-/*  */
+  .bg-forest {
+    background-image: var(--bg-image);
+  }
+}
 
 body.cabin {
-  background-color: var(--theme-cabin-bg);
-  color: var(--theme-cabin-output-text);
-}
-body.cabin .bg-cabin {
-  background-image: var(--theme-cabin-bg-image);
-  opacity: 1;
-}
-body.cabin button {
-  background: var(--theme-cabin-button);
-  color: var(--theme-cabin-button-text);
-}
-body.cabin .output {
-  background-color: var(--theme-cabin-output);
-  color: var(--theme-cabin-output-text);
-  scrollbar-color: var(--theme-cabin-scrollbar) transparent;
-}
-body.cabin dialog {
-  background-image: var(--theme-cabin-bg-image);
-  color: var(--theme-cabin-output-text);
-}
-body.cabin dialog .inventory-content {
-  background-color: var(--theme-cabin-output);
-}
+  --text: var(--theme-cabin-text);
+  --bg: var(--theme-cabin-bg);
+  --output: var(--theme-cabin-output);
+  --output-text: var(--theme-cabin-output-text);
+  --button: var(--theme-cabin-button);
+  --button-text: var(--theme-cabin-button-text);
+  --scrollbar: var(--theme-cabin-scrollbar);
+  --bg-image: var(--theme-cabin-bg-image);
 
-/*  */
+  .bg-cabin {
+    background-image: var(--bg-image);
+  }
+}
 
 body.urban {
-  background-color: var(--theme-urban-bg);
-  color: var(--theme-urban-text);
-}
-body.urban .bg-urban {
-  background-image: var(--theme-urban-bg-image);
-  opacity: 1;
-}
-body.urban button {
-  background: var(--theme-urban-button);
-  color: var(--theme-urban-button-text);
-}
-body.urban .output {
-  background-color: var(--theme-urban-output);
-  color: var(--theme-urban-output-text);
-  scrollbar-color: var(--theme-urban-scrollbar) transparent;
-}
-body.urban dialog {
-  background-image: var(--theme-urban-bg-image);
-  color: var(--theme-urban-output-text);
-}
-body.urban dialog .inventory-content {
-  background-color: var(--theme-urban-output);
-}
+  --text: var(--theme-urban-text);
+  --bg: var(--theme-urban-bg);
+  --output: var(--theme-urban-output);
+  --output-text: var(--theme-urban-output-text);
+  --button: var(--theme-urban-button);
+  --button-text: var(--theme-urban-button-text);
+  --scrollbar: var(--theme-urban-scrollbar);
+  --bg-image: var(--theme-urban-bg-image);
 
-/*  */
+  .bg-urban {
+    background-image: var(--bg-image);
+  }
+}
 
 body.beach {
-  background-color: var(--theme-beach-bg);
-  color: var(--theme-beach-text);
-}
-body.beach .bg-beach {
-  background-image: var(--theme-beach-bg-image);
-  opacity: 1;
-}
-body.beach button {
-  background: var(--theme-beach-button);
-  color: var(--theme-beach-button-text);
-}
-body.beach .output {
-  background-color: var(--theme-beach-output);
-  color: var(--theme-beach-output-text);
-  scrollbar-color: var(--theme-beach-scrollbar) transparent;
-}
-body.beach dialog {
-  background-image: var(--theme-beach-bg-image);
-  color: var(--theme-beach-output-text);
-}
-body.beach dialog .inventory-content {
-  background-color: var(--theme-beach-output);
-}
+  --text: var(--theme-beach-text);
+  --bg: var(--theme-beach-bg);
+  --output: var(--theme-beach-output);
+  --output-text: var(--theme-beach-output-text);
+  --button: var(--theme-beach-button);
+  --button-text: var(--theme-beach-button-text);
+  --scrollbar: var(--theme-beach-scrollbar);
+  --bg-image: var(--theme-beach-bg-image);
 
-/*  */
+  .bg-beach {
+    background-image: var(--bg-image);
+  }
+}
 
 body.cliffs {
-  background-color: var(--theme-cliffs-bg);
-  color: var(--theme-cliffs-text);
-}
-body.cliffs .bg-cliffs {
-  background-image: var(--theme-cliffs-bg-image);
-  opacity: 1;
-}
-body.cliffs button {
-  background: var(--theme-cliffs-button);
-  color: var(--theme-cliffs-bg);
-}
-body.cliffs .output {
-  background-color: var(--theme-cliffs-output);
-  color: var(--theme-cliffs-output-text);
-  scrollbar-color: var(--theme-cliffs-scrollbar) transparent;
-}
-body.cliffs dialog {
-  background-image: var(--theme-cliffs-bg-image);
-  color: var(--theme-cliffs-output-text);
-}
-body.cliffs dialog .inventory-content {
-  background-color: var(--theme-cliffs-output);
+  --text: var(--theme-cliffs-text);
+  --bg: var(--theme-cliffs-bg);
+  --output: var(--theme-cliffs-output);
+  --output-text: var(--theme-cliffs-output-text);
+  --button: var(--theme-cliffs-button);
+  --button-text: var(--theme-cliffs-button-text);
+  --scrollbar: var(--theme-cliffs-scrollbar);
+  --bg-image: var(--theme-cliffs-bg-image);
+
+  .bg-cliffs {
+    background-image: var(--bg-image);
+  }
 }
 
 /*  */
 
 body.lake {
-  background-color: var(--theme-lake-bg);
-  color: var(--theme-lake-text);
-}
-body.lake .bg-lake {
-  background-image: var(--theme-lake-bg-image);
-  opacity: 1;
-}
-body.lake button {
-  background: var(--theme-lake-button);
-  color: var(--theme-lake-button-text);
-}
-body.lake .output {
-  background-color: var(--theme-lake-output);
-  color: var(--theme-lake-output-text);
-  scrollbar-color: var(--theme-lake-scrollbar) transparent;
-}
-body.lake dialog {
-  background-image: var(--theme-lake-bg-image);
-  color: var(--theme-lake-output-text);
-}
-body.lake dialog .inventory-content {
-  background-color: var(--theme-lake-output);
-}
+  --text: var(--theme-lake-text);
+  --bg: var(--theme-lake-bg);
+  --output: var(--theme-lake-output);
+  --output-text: var(--theme-lake-output-text);
+  --button: var(--theme-lake-button);
+  --button-text: var(--theme-lake-button-text);
+  --scrollbar: var(--theme-lake-scrollbar);
+  --bg-image: var(--theme-lake-bg-image);
 
-/*  */
+  .bg-lake {
+    background-image: var(--bg-image);
+  }
+}
 
 body.haunt {
-  background-color: var(--theme-haunt-bg);
-  color: var(--theme-haunt-text);
-}
-body.haunt .bg-haunt {
-  background-image: var(--theme-haunt-bg-image);
-  opacity: 1;
-}
-body.haunt button {
-  background: var(--theme-haunt-button);
-  color: var(--theme-haunt-button-text);
-}
-body.haunt .output {
-  background-color: var(--theme-haunt-output);
-  color: var(--theme-haunt-output-text);
-  scrollbar-color: var(--theme-haunt-scrollbar) transparent;
-}
-body.haunt dialog {
-  background-image: var(--theme-haunt-bg-image);
-  color: var(--theme-haunt-output-text);
-}
-body.haunt dialog .inventory-content {
-  background-color: var(--theme-haunt-output);
-}
+  --text: var(--theme-haunt-text);
+  --bg: var(--theme-haunt-bg);
+  --output: var(--theme-haunt-output);
+  --output-text: var(--theme-haunt-output-text);
+  --button: var(--theme-haunt-button);
+  --button-text: var(--theme-haunt-button-text);
+  --scrollbar: var(--theme-haunt-scrollbar);
+  --bg-image: var(--theme-haunt-bg-image);
 
-/*  */
+  .bg-haunt {
+    background-image: var(--bg-image);
+  }
+}
 
 body.mountain {
-  background-color: var(--theme-mountain-bg);
-  color: var(--theme-mountain-text);
-}
-body.mountain .bg-mountain {
-  background-image: var(--theme-mountain-bg-image);
-  opacity: 1;
-}
-body.mountain button {
-  background: var(--theme-mountain-button);
-  color: var(--theme-mountain-button-text);
-}
-body.mountain .output {
-  background-color: var(--theme-mountain-output);
-  color: var(--theme-mountain-output-text);
-  scrollbar-color: var(--theme-mountain-scrollbar) transparent;
-}
-body.mountain dialog {
-  background-image: var(--theme-mountain-bg-image);
-  color: var(--theme-mountain-output-text);
-}
-body.mountain dialog .inventory-content {
-  background-color: var(--theme-mountain-output);
+  --text: var(--theme-mountain-text);
+  --bg: var(--theme-mountain-bg);
+  --output: var(--theme-mountain-output);
+  --output-text: var(--theme-mountain-output-text);
+  --button: var(--theme-mountain-button);
+  --button-text: var(--theme-mountain-button-text);
+  --scrollbar: var(--theme-mountain-scrollbar);
+  --bg-image: var(--theme-mountain-bg-image);
+
+  .bg-mountain {
+    background-image: var(--bg-image);
+  }
 }
