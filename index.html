@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body class="bg-none">
+
+    <div class="bg"></div>
+
+    <div class="wrapper">
+      <h1>Cyberpet CYOA Demo</h1>
+  
+      <div class="controls">
+        <button id="open-inventory">Inventory</button>
+      </div>
+
+      <div class="output" id="output">
+        <p class="center">Loading...</p>
+      </div>
+
+      <footer></footer>
+    </div>
+
+    <dialog id="inventory-dialog">
+      <div class="inventory-content">
+        <h2>Inventory</h2>
+        <div id="inventory-items"></div>
+        <button id="close-inventory">Close</button>
+      </div>
+    </dialog>
+
+    <script src="./scenes.js"></script>
+    <script src="./adopt.js"></script>
+  </body>
+</html>

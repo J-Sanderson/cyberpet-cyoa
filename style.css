@@ -1,0 +1,463 @@
+:root {
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
+  /*  */
+  --theme-none-text: rgb(8, 19, 41);
+  --theme-none-bg: rgb(82, 167, 82);
+  --theme-none-output: rgba(82, 167, 82, 0.6);
+  --theme-none-output-text: rgb(8, 19, 41);
+  --theme-none-button: rgb(8, 19, 41);
+  --theme-none-button-text: var(--white);
+  --theme-none-scrollbar: rgb(8, 19, 41);
+  --theme-none-bg-image: url('./img/bg/seamless_green_background.jpg');
+  /*  */
+  --theme-forest-text: rgb(8, 19, 41);
+  --theme-forest-bg: rgb(9, 48, 9);
+  --theme-forest-output: rgba(9, 48, 9, 0.6);
+  --theme-forest-output-text: rgb(228, 212, 140);
+  --theme-forest-button: rgb(228, 212, 140);
+  --theme-forest-button-text: rgb(8, 19, 41);
+  --theme-forest-scrollbar: rgb(228, 212, 140);
+  --theme-forest-bg-image: url('./img/bg/green_web_background.jpg');
+  /*  */
+  --theme-cabin-text: rgb(8, 19, 41);
+  --theme-cabin-bg: rgb(9, 48, 9);
+  --theme-cabin-output: rgba(9, 48, 9, 0.6);
+  --theme-cabin-output-text: rgb(228, 212, 140);
+  --theme-cabin-button: rgb(228, 212, 140);
+  --theme-cabin-button-text: rgb(8, 19, 41);
+  --theme-cabin-scrollbar: rgb(228, 212, 140);
+  --theme-cabin-bg-image: url('./img/bg/dark_brown_timber_wall_texture.jpg');
+  /*  */
+  --theme-urban-text: rgb(170, 175, 180);
+  --theme-urban-bg: rgb(21, 22, 24);
+  --theme-urban-output: rgba(21, 22, 24, 0.6);
+  --theme-urban-output-text: rgb(170, 175, 180);
+  --theme-urban-button: rgb(170, 175, 180);
+  --theme-urban-button-text: rgb(21, 22, 24);
+  --theme-urban-scrollbar: rgb(170, 175, 180);
+  --theme-urban-bg-image: url('./img/bg/metal_background_pattern_with_rivets.jpg');
+  /*  */
+  --theme-beach-text: rgb(8, 19, 41);
+  --theme-beach-bg: rgb(104, 181, 236);
+  --theme-beach-output: rgba(231, 195, 116, 0.7);
+  --theme-beach-output-text: rgb(8, 19, 41);
+  --theme-beach-button: rgb(104, 181, 236);
+  --theme-beach-button-text: rgb(8, 19, 41);
+  --theme-beach-scrollbar: rgb(104, 181, 236);
+  --theme-beach-bg-image: url('./img/bg/abstract_water_texture-seamless.jpg');
+  /*  */
+  --theme-cliffs-text: rgb(28, 15, 4);
+  --theme-cliffs-bg: rgb(173, 161, 136);
+  --theme-cliffs-output: rgba(231, 195, 116, 0.6);
+  --theme-cliffs-output-text: rgb(28, 15, 4);
+  --theme-cliffs-button: rgb(28, 15, 4);
+  --theme-cliffs-button-text: rgb(173, 161, 136);
+  --theme-cliffs-scrollbar: rgb(28, 15, 4);
+  --theme-cliffs-bg-image: url('./img/bg/seamless-stone-like-background.jpg');
+  /*  */
+  --theme-lake-text: rgb(8, 19, 41);
+  --theme-lake-bg: rgb(104, 181, 236);
+  --theme-lake-output: rgba(82, 167, 82, 0.7);
+  --theme-lake-output-text: rgb(8, 19, 41);
+  --theme-lake-button: rgb(8, 19, 41);
+  --theme-lake-button-text: var(--white);
+  --theme-lake-scrollbar: rgb(8, 19, 41);
+  --theme-lake-bg-image: url('./img/bg/abstract_water_texture-seamless.jpg');
+  /* */
+  --theme-haunt-text: rgb(122, 209, 189);
+  --theme-haunt-bg: rgb(13, 56, 34);
+  --theme-haunt-output: rgba(13, 56, 34, 0.6);
+  --theme-haunt-output-text: rgb(122, 209, 189);
+  --theme-haunt-button: rgb(122, 209, 189);
+  --theme-haunt-button-text: rgb(13, 56, 34);
+  --theme-haunt-scrollbar: rgb(122, 209, 189);
+  --theme-haunt-bg-image: url('./img/bg/seamless_dark_decorative_background.jpg');
+  /*  */
+  --theme-mountain-text: rgb(8, 19, 41);
+  --theme-mountain-bg: rgb(214, 241, 245);
+  --theme-mountain-output: rgba(214, 241, 245, 0.6);
+  --theme-mountain-output-text: rgb(8, 19, 41);
+  --theme-mountain-button: rgb(8, 19, 41);
+  --theme-mountain-button-text: rgb(214, 241, 245);
+  --theme-mountain-scrollbar: rgb(8, 19, 41);
+  --theme-mountain-bg-image: url('./img/bg/light_web_background.jpg');
+}
+@font-face {
+	font-family: 'UncialAntiqua';
+	src: url('UncialAntiqua-Regular.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--theme-none-bg);
+  color: var(--theme-none-text);
+  transition: color background-color 1s;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 2s;
+  z-index: -1;
+}
+
+.bg-none {
+  background-image: var(--theme-none-bg-image);
+  opacity: 1;
+}
+
+h1 {
+  font-family: UncialAntiqua, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+img {
+	border:0px;
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-block-end: 1rem;
+}
+
+:is(button, .button) {
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  margin-right: 1rem;
+  background: var(--theme-none-button);
+  color: var(--theme-none-button-text);
+  cursor: pointer;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+:is(button, .button):is(:hover, :focus-visible) {
+  opacity: 0.6;
+}
+
+:is(button, .button):disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+a {
+  color: inherit;
+}
+
+a:has(h1) {
+  text-decoration: none;
+}
+
+.wrapper {
+  height: 100vh;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.output {
+  border: 1px solid;
+  border-radius: 5px;
+  flex-grow: 1;
+  height: 70vh;
+  overflow-y: auto;
+  padding: 1rem;
+  position: relative;
+  background-color: var(--theme-none-output);
+  color: var(--theme-none-output-text);
+  scrollbar-color: var(--theme-none-scrollbar) transparent;
+}
+
+.output :is(p, button, img, h2) {
+  animation: fadeIn 1s;
+  margin-bottom: 1rem;
+}
+
+.output .password-form {
+  animation: fadeIn 1s;
+  margin-bottom: 2rem;
+  display: flex;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  flex-wrap: wrap;
+
+  label {
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    flex-shrink: 0;
+    margin: 0;
+  }
+}
+
+dialog {
+  background-image: var(--theme-none-bg-image);
+  color: var(--theme-none-output-text);
+  border: 1px solid;
+  padding: 0;
+  max-width: 40rem;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  > div {
+    background-color: var(--theme-none-output);
+    padding: 1rem;
+  }
+}
+
+dialog::backdrop {
+  background-color: rgba(0,0,0,0.5);
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.center {
+  text-align: center;
+}
+
+footer {
+  padding: 1rem 0;
+  font-size: 0.7rem;
+}
+
+/* THEMES */
+
+:is(body.forest, body.cabin, body.beach, body.haunt, body.mountain, body.lake, body.cliffs) .bg-none {
+  opacity: 0;
+}
+
+body.forest {
+  background-color: var(--theme-forest-bg);
+  color: var(--theme-forest-text);
+}
+body.forest .bg-forest {
+  background-image: var(--theme-forest-bg-image);
+  opacity: 1;
+}
+body.forest button {
+  background: var(--theme-forest-button);
+  color: var(--theme-forest-text);
+}
+body.forest .output {
+  background-color: var(--theme-forest-output);
+  color: var(--theme-forest-output-text);
+  scrollbar-color: var(--theme-forest-scrollbar) transparent;
+}
+body.forest dialog {
+  background-image: var(--theme-forest-bg-image);
+  color: var(--theme-forest-output-text);
+}
+body.forest dialog .inventory-content {
+  background-color: var(--theme-forest-output);
+}
+
+/*  */
+
+body.cabin {
+  background-color: var(--theme-cabin-bg);
+  color: var(--theme-cabin-output-text);
+}
+body.cabin .bg-cabin {
+  background-image: var(--theme-cabin-bg-image);
+  opacity: 1;
+}
+body.cabin button {
+  background: var(--theme-cabin-button);
+  color: var(--theme-cabin-button-text);
+}
+body.cabin .output {
+  background-color: var(--theme-cabin-output);
+  color: var(--theme-cabin-output-text);
+  scrollbar-color: var(--theme-cabin-scrollbar) transparent;
+}
+body.cabin dialog {
+  background-image: var(--theme-cabin-bg-image);
+  color: var(--theme-cabin-output-text);
+}
+body.cabin dialog .inventory-content {
+  background-color: var(--theme-cabin-output);
+}
+
+/*  */
+
+body.urban {
+  background-color: var(--theme-urban-bg);
+  color: var(--theme-urban-text);
+}
+body.urban .bg-urban {
+  background-image: var(--theme-urban-bg-image);
+  opacity: 1;
+}
+body.urban button {
+  background: var(--theme-urban-button);
+  color: var(--theme-urban-button-text);
+}
+body.urban .output {
+  background-color: var(--theme-urban-output);
+  color: var(--theme-urban-output-text);
+  scrollbar-color: var(--theme-urban-scrollbar) transparent;
+}
+body.urban dialog {
+  background-image: var(--theme-urban-bg-image);
+  color: var(--theme-urban-output-text);
+}
+body.urban dialog .inventory-content {
+  background-color: var(--theme-urban-output);
+}
+
+/*  */
+
+body.beach {
+  background-color: var(--theme-beach-bg);
+  color: var(--theme-beach-text);
+}
+body.beach .bg-beach {
+  background-image: var(--theme-beach-bg-image);
+  opacity: 1;
+}
+body.beach button {
+  background: var(--theme-beach-button);
+  color: var(--theme-beach-button-text);
+}
+body.beach .output {
+  background-color: var(--theme-beach-output);
+  color: var(--theme-beach-output-text);
+  scrollbar-color: var(--theme-beach-scrollbar) transparent;
+}
+body.beach dialog {
+  background-image: var(--theme-beach-bg-image);
+  color: var(--theme-beach-output-text);
+}
+body.beach dialog .inventory-content {
+  background-color: var(--theme-beach-output);
+}
+
+/*  */
+
+body.cliffs {
+  background-color: var(--theme-cliffs-bg);
+  color: var(--theme-cliffs-text);
+}
+body.cliffs .bg-cliffs {
+  background-image: var(--theme-cliffs-bg-image);
+  opacity: 1;
+}
+body.cliffs button {
+  background: var(--theme-cliffs-button);
+  color: var(--theme-cliffs-bg);
+}
+body.cliffs .output {
+  background-color: var(--theme-cliffs-output);
+  color: var(--theme-cliffs-output-text);
+  scrollbar-color: var(--theme-cliffs-scrollbar) transparent;
+}
+body.cliffs dialog {
+  background-image: var(--theme-cliffs-bg-image);
+  color: var(--theme-cliffs-output-text);
+}
+body.cliffs dialog .inventory-content {
+  background-color: var(--theme-cliffs-output);
+}
+
+/*  */
+
+body.lake {
+  background-color: var(--theme-lake-bg);
+  color: var(--theme-lake-text);
+}
+body.lake .bg-lake {
+  background-image: var(--theme-lake-bg-image);
+  opacity: 1;
+}
+body.lake button {
+  background: var(--theme-lake-button);
+  color: var(--theme-lake-button-text);
+}
+body.lake .output {
+  background-color: var(--theme-lake-output);
+  color: var(--theme-lake-output-text);
+  scrollbar-color: var(--theme-lake-scrollbar) transparent;
+}
+body.lake dialog {
+  background-image: var(--theme-lake-bg-image);
+  color: var(--theme-lake-output-text);
+}
+body.lake dialog .inventory-content {
+  background-color: var(--theme-lake-output);
+}
+
+/*  */
+
+body.haunt {
+  background-color: var(--theme-haunt-bg);
+  color: var(--theme-haunt-text);
+}
+body.haunt .bg-haunt {
+  background-image: var(--theme-haunt-bg-image);
+  opacity: 1;
+}
+body.haunt button {
+  background: var(--theme-haunt-button);
+  color: var(--theme-haunt-button-text);
+}
+body.haunt .output {
+  background-color: var(--theme-haunt-output);
+  color: var(--theme-haunt-output-text);
+  scrollbar-color: var(--theme-haunt-scrollbar) transparent;
+}
+body.haunt dialog {
+  background-image: var(--theme-haunt-bg-image);
+  color: var(--theme-haunt-output-text);
+}
+body.haunt dialog .inventory-content {
+  background-color: var(--theme-haunt-output);
+}
+
+/*  */
+
+body.mountain {
+  background-color: var(--theme-mountain-bg);
+  color: var(--theme-mountain-text);
+}
+body.mountain .bg-mountain {
+  background-image: var(--theme-mountain-bg-image);
+  opacity: 1;
+}
+body.mountain button {
+  background: var(--theme-mountain-button);
+  color: var(--theme-mountain-button-text);
+}
+body.mountain .output {
+  background-color: var(--theme-mountain-output);
+  color: var(--theme-mountain-output-text);
+  scrollbar-color: var(--theme-mountain-scrollbar) transparent;
+}
+body.mountain dialog {
+  background-image: var(--theme-mountain-bg-image);
+  color: var(--theme-mountain-output-text);
+}
+body.mountain dialog .inventory-content {
+  background-color: var(--theme-mountain-output);
+}
