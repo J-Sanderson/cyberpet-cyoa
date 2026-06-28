@@ -22,7 +22,7 @@ const sceneList = [
     "pets": [],
     "theme": null,
   },
-  // Cabin - flags + state
+  // Cabin - flags, inventory, state
   {
     "name": "cabinDoor",
     "desc": "<p>The door is locked.</p>",
@@ -160,7 +160,12 @@ const sceneList = [
         "name": "open",
         "text": "Go back",
         "preText": "<p>You walk back up the path toward the cabin.</p>",
-      }
+      },
+      {
+        "name": "buildingDoor",
+        "text": "Carry on",
+        "preText": "<p>You carry on down the main path</p>",
+      },
     ],
     "stateDesc": [
       {
@@ -176,7 +181,12 @@ const sceneList = [
             "name": "open",
             "text": "Go back",
             "preText": "<p>You walk back up the path toward the cabin.</p>",
-          }
+          },
+          {
+            "name": "buildingDoor",
+            "text": "Carry on",
+            "preText": "<p>You carry on down the main path</p>",
+          },
         ],
       }
     ],
@@ -191,7 +201,12 @@ const sceneList = [
         "name": "open",
         "text": "Go back",
         "preText": "<p>You walk back up the path toward the cabin.</p>",
-      }
+      },
+      {
+        "name": "buildingDoor",
+        "text": "Carry on",
+        "preText": "<p>You carry on down the main path</p>",
+      },
     ],
     "pets": [],
     "theme": "forest",
@@ -209,7 +224,12 @@ const sceneList = [
         "name": "open",
         "text": "Go back",
         "preText": "<p>You walk back up the path toward the cabin.</p>",
-      }
+      },
+      {
+        "name": "buildingDoor",
+        "text": "Carry on",
+        "preText": "<p>You carry on down the main path</p>",
+      },
     ],
     "pets": [],
     "theme": "forest",
@@ -261,7 +281,130 @@ const sceneList = [
       },
     ],
     "theme": "forest",
-  }
+  },
+  // Building - passwords
+  {
+    "name": "buildingDoor",
+    "desc": "<p>You are standing in front of a large building. The door is unlocked.</p>",
+    "nextScenes": [
+      {
+        "name": "forest",
+        "text": "Go back",
+        "preText": "<p>You head up the main path into the forest</p>",
+      },
+      {
+        "name": "building",
+        "text": "Go inside",
+        "preText": "<p>You head inside the building</p>",
+        "setPasswords": [{"key": "buildingPassword", "value": "1234"}],
+      }
+    ],
+    "pets": [],
+    "theme": "forest",
+  },
+  {
+    "name": "building",
+    "desc": "<p>You are standing inside a large building. The door you entered by is open. There is another door at the other end, and a desk nearby.</p>",
+    "nextScenes": [
+      {
+        "name": "buildingDoor",
+        "text": "Leave",
+        "preText": "<p>You head back outside</p>",
+      },
+      {
+        "name": "buildingDesk",
+        "text": "Look at the desk",
+        "preText": "<p>You look closer at the desk.</p>",
+      },
+      {
+        "name": "buildingLock",
+        "text": "Check the door",
+        "preText": "<p>You look closer at the far door.</p>"
+      }
+    ],
+    "pets": [],
+    "theme": "urban",
+  },
+  {
+    "name": "buildingDesk",
+    "desc": "<p>You see a piece of paper with '1234' written on it.</p>",
+    "nextScenes": [
+      {
+        "name": "buildingDoor",
+        "text": "Leave",
+        "preText": "<p>You head back outside</p>",
+      },
+      {
+        "name": "buildingLock",
+        "text": "Check the door",
+        "preText": "<p>You look closer at the far door.</p>"
+      }
+    ],
+    "pets": [],
+    "theme": "urban",
+  },
+  {
+    "name": "buildingLock",
+    "desc": "<p>The door is locked with a combination lock.</p>",
+    "nextScenes": [
+      {
+        "name": "buildingDesk",
+        "text": "Look at the desk",
+        "preText": "<p>You look closer at the desk.</p>",
+      },
+      {
+        "name": "buildingDoor",
+        "text": "Leave",
+        "preText": "<p>You head back outside</p>",
+      },
+    ],
+    "passwordPrompt": {
+      "prompt": "Try a code:",
+      "key": "buildingPassword",
+      "successScene": "buildingLockSuccess",
+      "failScene": "buildingLockFail",
+    },
+    "pets": [],
+    "theme": "urban",
+  },
+  {
+    "name": "buildingLockFail",
+    "desc": "<p>The lock doesn't move.</p>",
+    "nextScenes": [
+      {
+        "name": "buildingDesk",
+        "text": "Look at the desk",
+        "preText": "<p>You look closer at the desk.</p>",
+      },
+      {
+        "name": "buildingDoor",
+        "text": "Leave",
+        "preText": "<p>You head back outside</p>",
+      },
+    ],
+    "pets": [],
+    "theme": "urban",
+  },
+ {
+    "name": "buildingLockSuccess",
+    "desc": "<p>The lock clicks open.</p>",
+    "nextScenes": [
+      {
+        "name": "beach",
+        "text": "Go through the door",
+        "preText": "<p>You head through the door.</p>",
+      },
+    ],
+    "pets": [],
+    "theme": "urban",
+  },
+  {
+    "name": "beach",
+    "desc": "<p>You are standing on a lovely beach. That's it for this demo!</p>",
+    "nextScenes": [],
+    "pets": [{"name": "walrus", "threshold": 100}],
+    "theme": "beach",
+  },
 ];
 
 const petList = {
@@ -284,6 +427,13 @@ const petList = {
     "desc": "A bear! Better hope it's friendly.",
     "images": [
       "bear.jpg",
+    ],
+  },
+  "walrus": {
+    "name": "Walrus",
+    "desc": "You're going to need a bigger fishtank.",
+    "images": [
+      "walrus.jpg",
     ],
   },
 };

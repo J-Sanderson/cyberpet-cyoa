@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
 :root {
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
@@ -122,7 +124,7 @@ body {
 }
 
 h1 {
-  font-family: UncialAntiqua, sans-serif;
+  font-family: "Uncial Antiqua", system-ui;
   text-transform: uppercase;
   text-align: center;
 }
